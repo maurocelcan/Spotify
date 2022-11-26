@@ -1,0 +1,24 @@
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Artista</th>
+            <th>Año de Lanzamiento</th>
+            <th>Album</th>
+            <th>Portada</th>
+            <th>Añadir</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let song of songs">
+            <td>{{song.nombre}}</td>
+            <td>{{song.artista}}</td>
+            <td>{{song.anioDeLanzamiento}}</td>
+            <td>{{song.album}}</td>
+            <td>{{song.reproducciones | number}}</td>
+            <td><img [src]="song.image" [alt]="song.image"></td>
+            <td><span class="badge text-bg-info" *ngIf="song.anioDeLanzamiento <= 1990 && song.reproducciones >= 100000000">CLASICO</span></td>
+            <td><button class="btn btn-success" (click)="addToPlaylist(song)">Agregar a Mi Playlist</button></td>
+        </tr>
+    </tbody>
+</table>

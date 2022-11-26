@@ -1,0 +1,7 @@
+<h1>Mi Playlist !</h1>
+<ul>
+    <li *ngFor="let song of songList$ | async">
+        {{song.nombre}} - {{song.artista}}
+        <button class="btn btn-danger" (click)="deleteToPlaylist(song)">Eliminar</button>
+    </li>
+</ul>
